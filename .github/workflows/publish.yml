@@ -1,0 +1,53 @@
+name: Publish Dataset
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "datasets/opendem-gebco-2021/**"
+      - ".github/workflows/publish.yml"
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Cache tippecanoe build
+        id: cache-tippecanoe
+        uses: actions/cache@v4
+        with:
+          path: tippecanoe
+          key: tippecanoe
+
+      - name: Cache tmp build build artifacts
+        id: cache-tmp
+        uses: actions/cache@v4
+        with:
+          path: datasets/opendem-gebco-2021/tmp
+          key: opendem-gebco-2021-tmp
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl gdal-bin sqlite3 jq
+          # Install tippecanoe
+          sudo apt-get install -y build-essential libsqlite3-dev zlib1g-dev
+          git clone https://github.com/mapbox/tippecanoe.git
+          cd tippecanoe && make -j && sudo make install && cd ..
+          # Install mapshaper
+          bun install -g mapshaper
+
+      - name: Build opendem-gebco-2021
+        run: |
+          ./datasets/opendem-gebco-2021/build.sh
+
+      - name: Upload mbtiles artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mbtiles
+          path: "**/*.mbtiles"
