@@ -3,7 +3,7 @@
     {
       "id": "place_other",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "place",
       "minzoom": 8,
       "layout": {
@@ -86,12 +86,12 @@
           "borough"
         ]
       ],
-      "order": 193
+      "order": 28
     },
     {
       "id": "place_village",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "place",
       "minzoom": 8,
       "layout": {
@@ -129,12 +129,12 @@
           "village"
         ]
       ],
-      "order": 199
+      "order": 30
     },
     {
       "id": "place_town",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "place",
       "minzoom": 6,
       "layout": {
@@ -177,12 +177,12 @@
           "town"
         ]
       ],
-      "order": 200
+      "order": 31
     },
     {
       "id": "place_state",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "place",
       "minzoom": 4,
       "maxzoom": 12,
@@ -228,12 +228,12 @@
           3
         ]
       ],
-      "order": 201
+      "order": 32
     },
     {
       "id": "place_city",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "place",
       "minzoom": 4,
       "maxzoom": 14,
@@ -311,12 +311,12 @@
           1
         ]
       ],
-      "order": 202
+      "order": 33
     },
     {
       "id": "place_capital",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "place",
       "minzoom": 3,
       "maxzoom": 15,
@@ -396,12 +396,12 @@
           2
         ]
       ],
-      "order": 203
+      "order": 34
     },
     {
       "id": "country_other",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "place",
       "minzoom": 4,
       "maxzoom": 15,
@@ -449,12 +449,12 @@
           "iso_a2"
         ]
       ],
-      "order": 204
+      "order": 35
     },
     {
       "id": "country_3",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "place",
       "minzoom": 5,
       "maxzoom": 12,
@@ -518,12 +518,12 @@
           "iso_a2"
         ]
       ],
-      "order": 205
+      "order": 36
     },
     {
       "id": "country_2",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "place",
       "minzoom": 2,
       "maxzoom": 12,
@@ -587,12 +587,12 @@
           "iso_a2"
         ]
       ],
-      "order": 206
+      "order": 37
     },
     {
       "id": "country_1",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "place",
       "minzoom": 2,
       "maxzoom": 12,
@@ -656,7 +656,7 @@
           "iso_a2"
         ]
       ],
-      "order": 207
+      "order": 38
     }
   ]
 }

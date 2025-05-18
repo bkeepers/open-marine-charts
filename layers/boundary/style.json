@@ -3,7 +3,7 @@
     {
       "id": "boundary_3",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "boundary",
       "minzoom": 3,
       "layout": {
@@ -61,12 +61,12 @@
           0
         ]
       ],
-      "order": 146
+      "order": 20
     },
     {
       "id": "boundary_2",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "boundary",
       "minzoom": 0,
       "layout": {
@@ -114,12 +114,12 @@
           0
         ]
       ],
-      "order": 147
+      "order": 21
     },
     {
       "id": "boundary_2_disputed",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "boundary",
       "minzoom": 0,
       "layout": {
@@ -171,12 +171,12 @@
           0
         ]
       ],
-      "order": 148
+      "order": 22
     },
     {
       "id": "boundary_2_disputed_maritime",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "boundary",
       "minzoom": 0,
       "layout": {
@@ -228,12 +228,12 @@
           1
         ]
       ],
-      "order": 149
+      "order": 23
     },
     {
       "id": "boundary_2_maritime",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "boundary",
       "minzoom": 4,
       "layout": {
@@ -281,7 +281,7 @@
           1
         ]
       ],
-      "order": 150
+      "order": 24
     }
   ]
 }

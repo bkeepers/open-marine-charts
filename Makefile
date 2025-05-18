@@ -7,7 +7,7 @@ SHELL         = /bin/bash
 .SHELLFLAGS   = -o pipefail -c
 
 # Layers definition and meta data
-TILESET_FILE := $(or $(TILESET_FILE),$(shell (. .env; echo $${TILESET_FILE})),openmaptiles.yaml)
+TILESET_FILE := $(or $(TILESET_FILE),$(shell (. .env; echo $${TILESET_FILE})),openmarinecharts.yaml)
 
 # Options to run with docker and docker-compose - ensure the container is destroyed on exit
 # Containers run as the current user rather than root (so that created files are not root-owned)

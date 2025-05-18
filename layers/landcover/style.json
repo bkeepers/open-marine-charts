@@ -3,7 +3,7 @@
     {
       "id": "landcover_classes",
       "type": "fill",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landcover",
       "maxzoom": 13,
       "layout": {
@@ -58,12 +58,12 @@
           "sand"
         ]
       ],
-      "order": 4
+      "order": 1
     },
     {
       "id": "landcover_class_outline",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landcover",
       "layout": {
         "visibility": "visible"
@@ -80,12 +80,12 @@
           "farmland"
         ]
       ],
-      "order": 5
+      "order": 2
     },
     {
       "id": "landcover_park",
       "type": "fill",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landcover",
       "minzoom": 13,
       "layout": {
@@ -103,12 +103,12 @@
           "park"
         ]
       ],
-      "order": 6
+      "order": 3
     },
     {
       "id": "landcover_subclasses",
       "type": "fill",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landcover",
       "minzoom": 13,
       "layout": {
@@ -228,12 +228,12 @@
           "wood"
         ]
       ],
-      "order": 7
+      "order": 4
     },
     {
       "id": "landcover_subclass_patterns",
       "type": "fill",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landcover",
       "minzoom": 13,
       "layout": {
@@ -352,12 +352,12 @@
           "wood"
         ]
       ],
-      "order": 8
+      "order": 5
     },
     {
       "id": "landcover_subclass_outline",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landcover",
       "minzoom": 15,
       "layout": {
@@ -403,12 +403,12 @@
           "recreation_ground"
         ]
       ],
-      "order": 9
+      "order": 6
     },
     {
       "id": "landcover_ice",
       "type": "fill",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landcover",
       "minzoom": 5,
       "paint": {
@@ -424,12 +424,12 @@
           "ice"
         ]
       ],
-      "order": 10
+      "order": 7
     },
     {
       "id": "landcover_ice_outline",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landcover",
       "minzoom": 5,
       "layout": {
@@ -476,7 +476,7 @@
           "ice"
         ]
       ],
-      "order": 11
+      "order": 8
     }
   ]
 }

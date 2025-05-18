@@ -7,7 +7,7 @@
     }
   },
   "styles": {
-    "OSM OpenMapTiles": {
+    "OpenMarineCharts": {
       "style": "style.json",
       "tilejson": {
         "type": "overlay"
@@ -15,7 +15,7 @@
     }
   },
   "data": {
-    "openmaptiles": {
+    "openmarinecharts": {
       "mbtiles": "/data/tiles.mbtiles"
     }
   }

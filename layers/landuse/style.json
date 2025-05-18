@@ -3,7 +3,7 @@
     {
       "id": "landuse_classes",
       "type": "fill",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landuse",
       "minzoom": 7,
       "layout": {
@@ -95,7 +95,7 @@
     {
       "id": "landuse_residential",
       "type": "fill",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landuse",
       "minzoom": 6,
       "maxzoom": 24,
@@ -136,7 +136,7 @@
     {
       "id": "landuse_class_pattern",
       "type": "fill",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landuse",
       "layout": {
         "visibility": "visible"
@@ -172,7 +172,7 @@
     {
       "id": "landuse_class_outline",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landuse",
       "minzoom": 13,
       "layout": {
@@ -318,7 +318,7 @@
     {
       "id": "landuse_class_themepark",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "landuse",
       "minzoom": 13,
       "layout": {

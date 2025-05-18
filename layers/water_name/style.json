@@ -3,7 +3,7 @@
     {
       "id": "water_name_line",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "water_name",
       "minzoom": 0,
       "layout": {
@@ -31,12 +31,12 @@
           "LineString"
         ]
       ],
-      "order": 152
+      "order": 26
     },
     {
       "id": "water_name_point",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "water_name",
       "minzoom": 16,
       "maxzoom": 24,
@@ -68,7 +68,7 @@
           "ocean"
         ]
       ],
-      "order": 153
+      "order": 27
     }
   ]
 }

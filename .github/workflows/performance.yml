@@ -191,7 +191,7 @@ jobs:
             fi
 
             (set -x; profile test-perf docker compose run --rm -T openmaptiles-tools \
-              test-perf openmaptiles.yaml $TEST_PERF_PARAMS \
+              test-perf openmarinecharts.yaml $TEST_PERF_PARAMS \
               --record /tileset/results.json)
             echo "Done generating base perf results, moving them to ../perf_cache"
             pwd
@@ -232,7 +232,7 @@ jobs:
             pwd
             cp ../perf_cache/results.json .
             OUTPUT="$(set -x; profile test-perf docker compose run --rm -T openmaptiles-tools \
-                        test-perf openmaptiles.yaml $TEST_PERF_PARAMS \
+                        test-perf openmarinecharts.yaml $TEST_PERF_PARAMS \
                         --compare /tileset/results.json --record /tileset/pr-results.json)"
             rm results.json
             mv pr-results.json ../artifacts/

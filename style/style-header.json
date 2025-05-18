@@ -1,7 +1,7 @@
 {
   "version": 8,
-  "name": "OSM OpenMapTiles",
-  "id": "openmaptiles",
+  "name": "OpenMarineCharts",
+  "id": "openmarinecharts",
   "center": [
     0,
     0
@@ -10,12 +10,12 @@
   "bearing": 0,
   "pitch": 0,
   "sources": {
-    "openmaptiles": {
+    "openmarinecharts": {
       "type": "vector",
       "url": "mbtiles:///data/tiles.mbtiles"
     },
     "attribution": {
-      "attribution": "<a href=\"https://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>",
+      "attribution": "<a href=\"https://github.com/bkeepers/openmarinecharts\" target=\"_blank\">© Brandon Keepers</a> <a href=\"https://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>",
       "type": "vector"
     }
   },

@@ -3,7 +3,7 @@
     {
       "id": "waterway_tunnel",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "waterway",
       "minzoom": 14,
       "layout": {
@@ -38,12 +38,12 @@
           "tunnel"
         ]
       ],
-      "order": 12
+      "order": 9
     },
     {
       "id": "waterway_river",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "waterway",
       "layout": {
         "line-cap": "round",
@@ -84,12 +84,12 @@
           1
         ]
       ],
-      "order": 13
+      "order": 10
     },
     {
       "id": "waterway_river_intermittent",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "waterway",
       "layout": {
         "line-cap": "round"
@@ -133,12 +133,12 @@
           1
         ]
       ],
-      "order": 14
+      "order": 11
     },
     {
       "id": "waterway_other",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "waterway",
       "layout": {
         "line-cap": "round",
@@ -179,12 +179,12 @@
           1
         ]
       ],
-      "order": 15
+      "order": 12
     },
     {
       "id": "waterway_other_intermittent",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "waterway",
       "layout": {
         "line-cap": "round",
@@ -229,12 +229,12 @@
           1
         ]
       ],
-      "order": 16
+      "order": 13
     },
     {
       "id": "waterway-bridge-case",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "waterway",
       "layout": {
         "line-cap": "butt",
@@ -282,12 +282,12 @@
           "bridge"
         ]
       ],
-      "order": 111
+      "order": 18
     },
     {
       "id": "waterway-bridge",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "waterway",
       "layout": {
         "line-cap": "round",
@@ -322,12 +322,12 @@
           "bridge"
         ]
       ],
-      "order": 112
+      "order": 19
     },
     {
       "id": "water_way_name",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "waterway",
       "minzoom": 0,
       "layout": {
@@ -367,7 +367,7 @@
           "LineString"
         ]
       ],
-      "order": 151
+      "order": 25
     }
   ]
 }

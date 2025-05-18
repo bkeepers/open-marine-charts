@@ -3,7 +3,7 @@
     {
       "id": "national_parks",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "park",
       "minzoom": 8,
       "layout": {
@@ -35,12 +35,12 @@
         "line-offset": 1,
         "line-opacity": 0.8
       },
-      "order": 20
+      "order": 16
     },
     {
       "id": "national_parks_thin",
       "type": "line",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "park",
       "minzoom": 10,
       "layout": {
@@ -50,12 +50,12 @@
         "line-color": "rgba(93, 156, 76, 1)",
         "line-width": 1.5
       },
-      "order": 21
+      "order": 17
     },
     {
       "id": "park-national",
       "type": "symbol",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "park",
       "minzoom": 7,
       "maxzoom": 12,
@@ -105,7 +105,7 @@
           2
         ]
       ],
-      "order": 195
+      "order": 29
     }
   ]
 }

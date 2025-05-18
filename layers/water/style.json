@@ -3,7 +3,7 @@
     {
       "id": "water_intermittent",
       "type": "fill",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "water",
       "layout": {
         "visibility": "visible"
@@ -21,12 +21,12 @@
           1
         ]
       ],
-      "order": 17
+      "order": 14
     },
     {
       "id": "water",
       "type": "fill",
-      "source": "openmaptiles",
+      "source": "openmarinecharts",
       "source-layer": "water",
       "layout": {
         "visibility": "visible"
@@ -48,7 +48,7 @@
           "tunnel"
         ]
       ],
-      "order": 18
+      "order": 15
     }
   ]
 }
