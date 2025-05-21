@@ -1,0 +1,33 @@
+services:
+  build:
+    image: systemed/tilemaker:master
+    volumes:
+      - .:/src
+    working_dir: /src
+
+  server:
+    image: maptiler/tileserver-gl:latest
+    command:
+      - --port
+      - "${PORT:-8080}"
+      - --config
+      - "/style/config.json"
+    ports:
+      - "${PORT:-8080}:${PORT:-8080}"
+    volumes:
+      - ./data:/data
+      - ./style:/style
+      - ./build:/build
+
+  design:
+    image: "maputnik/editor"
+    ports:
+      - "8081:8888"
+    command:
+      - maputnik
+      - --file
+      - "/style/style.json"
+      - --watch
+    volumes:
+      - ./style:/style
+      - ./build:/build

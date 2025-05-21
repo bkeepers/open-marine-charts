@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# Usage: bin/regions.sh <command>
+# Commands:
+#   list: List all available regions
+#   download <region>: Download a specific region
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+cd "$(dirname "$0")/.."
+
+mkdir -p cache
+
+if [ ! -f cache/regions.json ]; then
+  curl -s https://download.geofabrik.de/index-v1.json > cache/regions.json
+fi
+
+case "${1:-}" in
+  list)
+    jq -r '.features[].properties.name' cache/regions.json
+    ;;
+  download)
+    if [ -z "${2:-}" ]; then
+      echo "Usage: $0 download <region>"
+      exit 1
+    fi
+
+    REGION="$2"
+
+    URL=$(jq -r --arg region "$REGION" '
+      .features[].properties | select((.id? // "") == $region or (.name? // "") == $region) | .urls.pbf // empty
+    ' cache/regions.json)
+
+    if [ -z "$URL" ]; then
+      echo "Region '$REGION' not found. Use list-regions to see available regions."
+      exit 1
+    fi
+
+
+    mkdir -p data && cd data
+
+    echo "Downloading region $REGION from $URL"
+    curl -C - -fO "$URL"
+
+    ;;
+  *)
+    echo "Usage: $0 <list|download <region>>"
+    exit 1
+    ;;
+esac

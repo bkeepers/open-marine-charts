@@ -1,0 +1,25 @@
+{
+  "options": {
+    "paths": {
+      "fonts": "/data/fonts",
+      "sprites": "/style",
+      "styles": "/style"
+    }
+  },
+  "styles": {
+    "OpenMarineCharts": {
+      "style": "style.json",
+      "tilejson": {
+        "type": "overlay"
+      }
+    }
+  },
+  "data": {
+    "base": {
+      "mbtiles": "/build/base.mbtiles"
+    },
+    "openmarinecharts": {
+      "mbtiles": "/build/bahamas.mbtiles"
+    }
+  }
+}

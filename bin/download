@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+cd "$(dirname "$0")/.."
+
+mkdir -p data
+cd data
+
+SOURCES=(
+  https://naciscdn.org/naturalearth/10m/physical/ne_10m_bathymetry_all.zip
+  https://naciscdn.org/naturalearth/10m/physical/ne_10m_antarctic_ice_shelves_polys.zip
+  https://naciscdn.org/naturalearth/10m/cultural/ne_10m_urban_areas.zip
+  https://naciscdn.org/naturalearth/10m/physical/ne_10m_glaciated_areas.zip
+  https://osmdata.openstreetmap.de/download/water-polygons-split-4326.zip
+)
+
+for SOURCE in "${SOURCES[@]}"; do
+  FILE="${SOURCE##*/}"
+  DIR="${FILE%.zip}"
+
+  if ! [ -f "$FILE" ]; then
+    echo "Downloading $FILE from $SOURCE"
+    curl -sSf -L -o $FILE $SOURCE
+  fi
+
+  if ! [ -d "$DIR" ]; then
+    echo "Extracting $FILE to $DIR"
+    mkdir -p "$DIR"
+    unzip -o -j $FILE -d $DIR
+  fi
+done
+
+
+if ! [ -d noto-sans.zip ]; then
+  echo "Downloading fonts"
+  curl -sSfLO -C - https://github.com/openmaptiles/fonts/releases/download/v2.0/noto-sans.zip
+  mkdir -p fonts
+  unzip -o noto-sans.zip -d fonts
+fi
