@@ -2,14 +2,14 @@
 	"layers": {
 		"water": {
 			"minzoom": 6,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"simplify_below": 12,
 			"simplify_level": 0.0003,
 			"simplify_ratio": 2
 		},
 		"ocean": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/water-polygons-split-4326/water_polygons.shp",
 			"filter_below": 12,
 			"filter_area": 0.5,
@@ -21,13 +21,15 @@
 		"bathymetry": {
 			"minzoom": 0,
 			"maxzoom": 6,
+			"filter_below": 6,
+			"filter_area": 0.5,
 			"simplify_below": 6,
 			"simplify_level": 0.0003,
 			"simplify_ratio": 2
 		},
 		"bathymetry_200": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_K_200.shp",
 			"source_columns": [
 				"featurecla",
@@ -37,7 +39,7 @@
 		},
 		"bathymetry_1000": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_J_1000.shp",
 			"source_columns": [
 				"featurecla",
@@ -47,7 +49,7 @@
 		},
 		"bathymetry_2000": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_I_1000.shp",
 			"source_columns": [
 				"featurecla",
@@ -57,7 +59,7 @@
 		},
 		"bathymetry_3000": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_H_3000.shp",
 			"source_columns": [
 				"featurecla",
@@ -67,7 +69,7 @@
 		},
 		"bathymetry_4000": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_G_4000.shp",
 			"source_columns": [
 				"featurecla",
@@ -77,7 +79,7 @@
 		},
 		"bathymetry_5000": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_F_5000.shp",
 			"source_columns": [
 				"featurecla",
@@ -87,7 +89,7 @@
 		},
 		"bathymetry_6000": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_E_6000.shp",
 			"source_columns": [
 				"featurecla",
@@ -97,7 +99,7 @@
 		},
 		"bathymetry_7000": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_D_7000.shp",
 			"source_columns": [
 				"featurecla",
@@ -107,7 +109,7 @@
 		},
 		"bathymetry_8000": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_C_8000.shp",
 			"source_columns": [
 				"featurecla",
@@ -117,7 +119,7 @@
 		},
 		"bathymetry_9000": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_B_9000.shp",
 			"source_columns": [
 				"featurecla",
@@ -127,7 +129,7 @@
 		},
 		"bathymetry_10000": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_A_10000.shp",
 			"source_columns": [
 				"featurecla",
@@ -137,7 +139,7 @@
 		},
 		"landuse": {
 			"minzoom": 4,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"simplify_below": 13,
 			"simplify_level": 0.0003,
 			"simplify_ratio": 2
@@ -156,7 +158,7 @@
 		},
 		"landcover": {
 			"minzoom": 0,
-			"maxzoom": 14,
+			"maxzoom": 6,
 			"simplify_below": 13,
 			"simplify_level": 0.0003,
 			"simplify_ratio": 2
@@ -186,13 +188,13 @@
 	},
 	"settings": {
 		"minzoom": 0,
-		"maxzoom": 14,
-		"basezoom": 14,
+		"maxzoom": 6,
+		"basezoom": 6,
 		"include_ids": false,
 		"combine_below": 14,
-		"name": "OpenMarineCharts Basemap",
+		"name": "OpenMarineCharts World",
+		"description": "A basemap of the world with coastlines, bathymetry, and glaciers.",
 		"version": "3.0",
-		"description": "Coastline, low-resolution urban areas and ice shelves/glaciers",
 		"high_resolution": true,
 		"compress": "gzip",
 		"filemetadata": {

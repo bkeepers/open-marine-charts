@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+cd "$(dirname "$0")/.."
+
+REGION=${1:-}
+
+if [ -z "$REGION" ]; then
+  echo "Usage: $0 <region>"
+  exit 1
+fi
+
+mkdir -p cache/build
+
+if ! [ -f build/world.mbtiles ]; then
+  echo "Building world.mbtiles"
+  docker compose run build \
+    --process configs/world/process.lua \
+    --config  configs/world/config.json \
+    --store cache/build \
+    --output build/world.mbtiles \
+    --bbox -180,-85,180,85
+else
+  # remove slash from region name
+  REGION_NAME=${REGION//\//_}
+
+  if ! [ -f data/$REGION_NAME-latest.osm.pbf ]; then
+    bin/regions download $REGION
+  fi
+
+  echo "Building $REGION"
+
+  docker compose run build data/${REGION_NAME}-latest.osm.pbf \
+    --output build/$REGION_NAME.mbtiles \
+    --process configs/region/process.lua \
+    --config configs/region/config.json \
+    --bbox -87,15,-67,35
+fi
