@@ -13,6 +13,7 @@ if [ -z "$REGION" ]; then
   exit 1
 fi
 
+mkdir -p build
 mkdir -p cache/build
 
 if ! [ -f build/world.mbtiles ]; then

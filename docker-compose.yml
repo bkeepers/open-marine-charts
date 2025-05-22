@@ -1,6 +1,6 @@
 services:
   build:
-    image: systemed/tilemaker:master
+    image: ghcr.io/systemed/tilemaker:master
     volumes:
       - .:/src
     working_dir: /src
@@ -20,7 +20,7 @@ services:
       - ./build:/build
 
   design:
-    image: "maputnik/editor"
+    image: maputnik/editor
     ports:
       - "8081:8888"
     command:

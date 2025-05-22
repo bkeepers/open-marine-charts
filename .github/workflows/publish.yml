@@ -1,0 +1,42 @@
+name: Publish Dataset
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Cache data artifacts
+        id: cache-data
+        uses: actions/cache@v4
+        with:
+          path: data
+          key: data
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl jq
+
+      - name: Download data
+        run: bin/download
+      - run: ls data/**/*
+
+      - name: Build world
+        run: bin/build world
+
+      - name: Upload mbtiles artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mbtiles
+          path: "build/*.mbtiles"
