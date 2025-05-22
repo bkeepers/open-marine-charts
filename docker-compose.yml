@@ -11,13 +11,12 @@ services:
       - --port
       - "${PORT:-8080}"
       - --config
-      - "/style/config.json"
+      - "config.json"
     ports:
       - "${PORT:-8080}:${PORT:-8080}"
     volumes:
-      - ./data:/data
-      - ./style:/style
-      - ./build:/build
+      - .:/src
+    working_dir: /src
 
   design:
     image: maputnik/editor

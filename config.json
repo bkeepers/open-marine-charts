@@ -1,9 +1,9 @@
 {
   "options": {
     "paths": {
-      "fonts": "/data/fonts",
-      "sprites": "/style",
-      "styles": "/style"
+      "fonts": "data/fonts",
+      "sprites": "style",
+      "styles": "style"
     }
   },
   "styles": {
@@ -15,11 +15,11 @@
     }
   },
   "data": {
-    "base": {
-      "mbtiles": "/build/base.mbtiles"
-    },
     "openmarinecharts": {
-      "mbtiles": "/build/bahamas.mbtiles"
+      "mbtiles": "build/world.mbtiles"
+    },
+    "openmarinecharts-bahamas": {
+      "mbtiles": "build/bahamas.mbtiles"
     }
   }
 }

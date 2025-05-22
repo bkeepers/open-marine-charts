@@ -12,7 +12,7 @@
   "sources": {
     "openmarinecharts": {
       "type": "vector",
-      "url": "mbtiles:///build/bahamas.mbtiles"
+      "url": "mbtiles://build/world.mbtiles"
     },
     "attribution": {
       "attribution": "<a href=\"https://github.com/bkeepers/openmarinecharts\" target=\"_blank\">\u00a9 Brandon Keepers</a> <a href=\"https://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>",
@@ -785,8 +785,20 @@
         "visibility": "visible"
       },
       "paint": {
-        "fill-color": "#FFFFFF",
-        "fill-opacity": 0.1
+        "fill-color": [
+          "interpolate-hcl",
+          [
+            "linear"
+          ],
+          [
+            "get",
+            "depth"
+          ],
+          0,
+          "#aad3df",
+          11000,
+          "#ffffff"
+        ]
       },
       "metadata": {}
     },
