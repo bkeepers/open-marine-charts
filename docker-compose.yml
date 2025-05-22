@@ -25,8 +25,8 @@ services:
     command:
       - maputnik
       - --file
-      - "/style/style.json"
+      - "/styles/world.json"
       - --watch
     volumes:
-      - ./style:/style
+      - ./styles:/styles
       - ./build:/build

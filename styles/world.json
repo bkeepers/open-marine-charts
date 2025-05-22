@@ -1,12 +1,12 @@
 {
   "version": 8,
-  "name": "OpenMarineCharts",
-  "id": "openmarinecharts",
+  "name": "OpenMarineCharts World",
+  "id": "openmarinecharts-world",
   "center": [
     -76,
     25
   ],
-  "zoom": 8,
+  "zoom": 4,
   "bearing": 0,
   "pitch": 0,
   "sources": {

@@ -195,7 +195,7 @@
 		"name": "OpenMarineCharts World",
 		"description": "A basemap of the world with coastlines, bathymetry, and glaciers.",
 		"version": "3.0",
-		"high_resolution": true,
+		"high_resolution": false,
 		"compress": "gzip",
 		"filemetadata": {
 			"tilejson": "2.0.0",

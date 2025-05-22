@@ -2,13 +2,13 @@
   "options": {
     "paths": {
       "fonts": "data/fonts",
-      "sprites": "style",
-      "styles": "style"
+      "sprites": "styles",
+      "styles": "styles"
     }
   },
   "styles": {
-    "OpenMarineCharts": {
-      "style": "style.json",
+    "openmarinecharts-world": {
+      "style": "world.json",
       "tilejson": {
         "type": "overlay"
       }
