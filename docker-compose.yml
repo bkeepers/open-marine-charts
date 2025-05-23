@@ -4,6 +4,9 @@ services:
     volumes:
       - .:/src
     working_dir: /src
+    # Override entrypoint to include exec so signals (like ctrl+c) are handled correctly
+    init: true
+    entrypoint: /usr/src/app/tilemaker
 
   server:
     image: maptiler/tileserver-gl:latest
@@ -18,7 +21,7 @@ services:
       - .:/src
     working_dir: /src
 
-  design:
+  editor:
     image: maputnik/editor
     ports:
       - "8081:8888"
