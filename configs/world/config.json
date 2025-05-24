@@ -1,210 +1,300 @@
 {
-	"layers": {
-		"water": {
-			"minzoom": 6,
-			"maxzoom": 6,
-			"simplify_below": 12,
-			"simplify_level": 0.0003,
-			"simplify_ratio": 2
-		},
-		"ocean": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/water-polygons-split-4326/water_polygons.shp",
-			"filter_below": 12,
-			"filter_area": 0.5,
-			"simplify_below": 13,
-			"simplify_level": 0.0001,
-			"simplify_ratio": 2,
-			"write_to": "water"
-		},
-		"bathymetry": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"filter_below": 6,
-			"filter_area": 0.5,
-			"simplify_below": 6,
-			"simplify_level": 0.0003,
-			"simplify_ratio": 2
-		},
-		"bathymetry_200": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_K_200.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"bathymetry_1000": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_J_1000.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"bathymetry_2000": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_I_1000.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"bathymetry_3000": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_H_3000.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"bathymetry_4000": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_G_4000.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"bathymetry_5000": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_F_5000.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"bathymetry_6000": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_E_6000.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"bathymetry_7000": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_D_7000.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"bathymetry_8000": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_C_8000.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"bathymetry_9000": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_B_9000.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"bathymetry_10000": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_A_10000.shp",
-			"source_columns": [
-				"featurecla",
-				"depth"
-			],
-			"write_to": "bathymetry"
-		},
-		"landuse": {
-			"minzoom": 4,
-			"maxzoom": 6,
-			"simplify_below": 13,
-			"simplify_level": 0.0003,
-			"simplify_ratio": 2
-		},
-		"urban_areas": {
-			"minzoom": 4,
-			"maxzoom": 8,
-			"source": "data/ne_10m_urban_areas/ne_10m_urban_areas.shp",
-			"source_columns": [
-				"featurecla"
-			],
-			"simplify_below": 7,
-			"simplify_level": 0.0003,
-			"simplify_ratio": 2,
-			"write_to": "landuse"
-		},
-		"landcover": {
-			"minzoom": 0,
-			"maxzoom": 6,
-			"simplify_below": 13,
-			"simplify_level": 0.0003,
-			"simplify_ratio": 2
-		},
-		"ice_shelf": {
-			"minzoom": 0,
-			"maxzoom": 9,
-			"source": "data/ne_10m_antarctic_ice_shelves_polys/ne_10m_antarctic_ice_shelves_polys.shp",
-			"source_columns": [
-				"featurecla"
-			],
-			"simplify_below": 13,
-			"simplify_level": 0.0005,
-			"write_to": "landcover"
-		},
-		"glacier": {
-			"minzoom": 2,
-			"maxzoom": 9,
-			"source": "data/ne_10m_glaciated_areas/ne_10m_glaciated_areas.shp",
-			"source_columns": [
-				"featurecla"
-			],
-			"simplify_below": 13,
-			"simplify_level": 0.0005,
-			"write_to": "landcover"
-		}
-	},
-	"settings": {
-		"minzoom": 0,
-		"maxzoom": 6,
-		"basezoom": 6,
-		"include_ids": false,
-		"combine_below": 14,
-		"name": "OpenMarineCharts World",
-		"description": "A basemap of the world with coastlines, bathymetry, and glaciers.",
-		"version": "3.0",
-		"high_resolution": false,
-		"compress": "gzip",
-		"filemetadata": {
-			"tilejson": "2.0.0",
-			"scheme": "xyz",
-			"type": "baselayer",
-			"format": "pbf",
-			"tiles": [
-				"https://example.com/liechtenstein/{z}/{x}/{y}.pbf"
-			]
-		}
-	}
+  "layers": {
+    "water": {
+      "minzoom": 6,
+      "maxzoom": 9,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2
+    },
+    "ocean": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/water-polygons-split-4326/water_polygons.shp",
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0001,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "playas": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_playas/ne_10m_playas.shp",
+      "source_columns": [
+        "featurecla"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_200": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_K_200.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_1000": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_J_1000.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_2000": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_I_1000.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_3000": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_H_3000.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_4000": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_G_4000.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_5000": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_F_5000.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_6000": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_E_6000.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_7000": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_D_7000.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_8000": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_C_8000.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_9000": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_B_9000.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "bathymetry_10000": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_bathymetry_all/ne_10m_bathymetry_A_10000.shp",
+      "source_columns": [
+        "featurecla",
+        "depth"
+      ],
+      "filter_below": 9,
+      "filter_area": 0.5,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "water"
+    },
+    "water_name": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_geography_marine_polys/ne_10m_geography_marine_polys.shp",
+      "source_columns": true
+    },
+    "landuse": {
+      "minzoom": 4,
+      "maxzoom": 9,
+      "simplify_below": 13,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2
+    },
+    "urban_areas": {
+      "minzoom": 4,
+      "maxzoom": 8,
+      "source": "data/ne_10m_urban_areas/ne_10m_urban_areas.shp",
+      "source_columns": [
+        "featurecla"
+      ],
+      "simplify_below": 7,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "landuse"
+    },
+    "landcover": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "simplify_below": 13,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2
+    },
+    "ice_shelf": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_antarctic_ice_shelves_polys/ne_10m_antarctic_ice_shelves_polys.shp",
+      "source_columns": [
+        "featurecla"
+      ],
+      "simplify_below": 13,
+      "simplify_level": 0.0005,
+      "write_to": "landcover"
+    },
+    "glacier": {
+      "minzoom": 2,
+      "maxzoom": 9,
+      "source": "data/ne_10m_glaciated_areas/ne_10m_glaciated_areas.shp",
+      "source_columns": [
+        "featurecla"
+      ],
+      "simplify_below": 13,
+      "simplify_level": 0.0005,
+      "write_to": "landcover"
+    },
+    "place": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2
+    },
+    "place-points": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_geography_regions_points/ne_10m_geography_regions_points.shp",
+      "source_columns": true,
+      "write_to": "place"
+    },
+    "place-regions": {
+      "minzoom": 0,
+      "maxzoom": 9,
+      "source": "data/ne_10m_geography_regions_polys/ne_10m_geography_regions_polys.shp",
+      "source_columns": true,
+      "simplify_below": 9,
+      "simplify_level": 0.0003,
+      "simplify_ratio": 2,
+      "write_to": "place"
+    }
+  },
+  "settings": {
+    "minzoom": 0,
+    "maxzoom": 9,
+    "basezoom": 9,
+    "include_ids": false,
+    "combine_below": 9,
+    "name": "OpenMarineCharts World",
+    "description": "A basemap of the world with coastlines, bathymetry, and glaciers.",
+    "version": "3.0",
+    "high_resolution": false,
+    "compress": "gzip",
+    "filemetadata": {
+      "tilejson": "2.0.0",
+      "scheme": "xyz",
+      "type": "baselayer",
+      "format": "pbf",
+      "tiles": [
+        "https://example.com/liechtenstein/{z}/{x}/{y}.pbf"
+      ]
+    }
+  }
 }

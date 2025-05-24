@@ -3,10 +3,15 @@
 set -o errexit
 set -o pipefail
 set -o nounset
+set -x
 
 cd "$(dirname "$0")/.."
 
 REGION=${1:-}
+
+# FIXME: get this from the region
+BBOX=-180,-85,180,85
+# BBOX=-90,15,-67,85
 
 if [ -z "$REGION" ]; then
   echo "Usage: $0 <region>"
@@ -16,27 +21,29 @@ fi
 mkdir -p build
 mkdir -p cache/build
 
-if ! [ -f build/world.mbtiles ]; then
-  echo "Building world.mbtiles"
-  docker compose run build \
-    --process configs/world/process.lua \
-    --config  configs/world/config.json \
-    --store cache/build \
-    --output build/world.mbtiles \
-    --bbox -180,-85,180,85
+if [ -d "configs/$REGION" ]; then
+  CONFIG=$REGION
+  OUTPUT=${2:-$REGION.mbtiles}
+  INPUT=""
 else
   # remove slash from region name
   REGION_NAME=${REGION//\//_}
+  CONFIG=region
+  INPUT="--input ${REGION_NAME}-latest.osm.pbf"
+  OUTPUT=${2:-$REGION_NAME.mbtiles}
 
   if ! [ -f data/$REGION_NAME-latest.osm.pbf ]; then
     bin/regions download $REGION
   fi
-
-  echo "Building $REGION"
-
-  docker compose run build data/${REGION_NAME}-latest.osm.pbf \
-    --output build/$REGION_NAME.mbtiles \
-    --process configs/region/process.lua \
-    --config configs/region/config.json \
-    --bbox -87,15,-67,35
 fi
+
+echo "Building $OUTPUT"
+docker compose run --rm -it build \
+  --process configs/$CONFIG/process.lua \
+  --config  configs/$CONFIG/config.json \
+  --store cache/build \
+  $INPUT --output build/.tmp.$OUTPUT \
+  --bbox $BBOX
+
+# Move the output file to the correct name
+mv build/.tmp.$OUTPUT build/$OUTPUT

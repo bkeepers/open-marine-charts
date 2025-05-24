@@ -12,6 +12,10 @@ cd data
 SOURCES=(
   https://naciscdn.org/naturalearth/10m/physical/ne_10m_bathymetry_all.zip
   https://naciscdn.org/naturalearth/10m/physical/ne_10m_antarctic_ice_shelves_polys.zip
+  https://naciscdn.org/naturalearth/10m/physical/ne_10m_geography_regions_polys.zip
+  https://naciscdn.org/naturalearth/10m/physical/ne_10m_geography_regions_points.zip
+  https://naciscdn.org/naturalearth/10m/physical/ne_10m_geography_marine_polys.zip
+  https://naciscdn.org/naturalearth/10m/physical/ne_10m_playas.zip
   https://naciscdn.org/naturalearth/10m/cultural/ne_10m_urban_areas.zip
   https://naciscdn.org/naturalearth/10m/physical/ne_10m_glaciated_areas.zip
   https://osmdata.openstreetmap.de/download/water-polygons-split-4326.zip
@@ -34,7 +38,7 @@ for SOURCE in "${SOURCES[@]}"; do
 done
 
 
-if ! [ -d noto-sans.zip ]; then
+if ! [ -f noto-sans.zip ]; then
   echo "Downloading fonts"
   curl -sSfLO -C - https://github.com/openmaptiles/fonts/releases/download/v2.0/noto-sans.zip
   mkdir -p fonts
