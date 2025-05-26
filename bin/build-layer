@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+# Set VERBOSE to enable verbose output
+if [[ -n "${VERBOSE-}" ]]; then
+  set -o xtrace
+  set -o verbose
+fi
+
+layer="${1:-}"
+
+if [[ -z "$layer" ]]; then
+  echo "Usage: $0 <layer>"
+  exit 1
+fi
+
+minzoom=$(yq -r '.minzoom // ""' "$layer")
+maxzoom=$(yq -r '.maxzoom // ""' "$layer")
+name=$(basename "$layer" .yaml)
+args=$(yq -r '.args // ""' "$layer")
+sources=()
+
+echo "Building $layer"
+
+for source in $(yq eval -o=j "$layer" | jq -cr '.sources[]'); do
+  url=$(echo $source | yq -r '.url' -)
+  FILE="data/${url##*/}"
+  DIR="${FILE%.zip}"
+
+  mkdir -p data
+
+  if ! [ -f "$FILE" ]; then
+    echo "Downloading $FILE from $url"
+    curl -sSf -L -o $FILE $url
+  fi
+
+  if ! [ -d "$DIR" ]; then
+    echo "Extracting $FILE to $DIR"
+    mkdir -p "$DIR"
+    unzip -o -j $FILE -d $DIR
+  fi
+
+  # Need to eval to expand file globbing
+  eval "files=($DIR/$(echo $source | jq -r '.source' -))"
+
+  for file in "${files[@]}"; do
+    geojsonfile="${file%.*}.geojson"
+
+    # Convert it to geojson if it's not already
+    if [[ ! -f "$geojsonfile" ]]; then
+      echo "Converting $file to $geojsonfile"
+      bin/ogr2ogr -f GeoJSON "$geojsonfile" "$file"
+
+      echo "Normalizing $geojsonfile"
+      cat $geojsonfile | bin/normalize-ne > "$geojsonfile.tmp"
+      mv "$geojsonfile.tmp" "$geojsonfile"
+    fi
+
+    sources+=("$geojsonfile")
+  done
+done
+
+zooms=""
+[ -n "$minzoom" ] && zooms="$zooms -Z $minzoom"
+[ -n "$maxzoom" ] && zooms="$zooms -z $maxzoom"
+# No zooms,
+[ -z "$zooms" ] && zooms="-zg"
+
+mkdir -p build/layer
+bin/tippecanoe --force \
+  --generate-ids \
+  -l $name \
+  -o "build/layer/$name.mbtiles.tmp" \
+  $zooms \
+  $args \
+  ${sources[@]}
+  # --drop-densest-as-needed \
+  # --detect-shared-borders \
+  # --simplification=4.0 \
+  # --no-feature-limit \
+
+mv build/layer/$name.mbtiles{.tmp,}

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Normalize the properties of GeoJSON features for use with Tippecanoe.
+# Usage: cat input.geojson | normalize-ne > output.geojson
+#
+# - Set tippecanoe minzoom based on min_zoom or scalerank.
+# - Convert all property keys to lowercase.
+
+jq '
+  . | .features |= map(
+      del(..|nulls) |
+      .properties |= with_entries(.key |= ascii_downcase) |
+      .tippecanoe = {
+        minzoom: ([14, (.properties.min_zoom // .properties.scalerank // 0 | floor)] | min)
+      }
+    )
+'

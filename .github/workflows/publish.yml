@@ -28,10 +28,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y curl jq
 
-      - name: Download data
-        run: bin/download
-      - run: ls data/**/*
-
       - name: Build world
         run: bin/build world
 

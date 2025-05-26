@@ -1,0 +1,4 @@
+maxzoom: 9
+sources:
+  - url: https://naciscdn.org/naturalearth/10m/cultural/10m_cultural.zip
+    source: ne_10m_urban_areas.shp

@@ -1,11 +1,24 @@
 services:
-  build:
+  tippecanoe:
+    image: ghcr.io/bkeepers/tippecanoe:main
+    volumes:
+      - .:/src
+    working_dir: /src
+    init: true # Ensure proper signal handling
+
+  gdal:
+    image: ghcr.io/osgeo/gdal:ubuntu-small-latest
+    volumes:
+      - .:/src
+    working_dir: /src
+    init: true # Ensure proper signal handling
+
+  tilemaker:
     image: ghcr.io/systemed/tilemaker:master
     volumes:
       - .:/src
     working_dir: /src
-    # Override entrypoint to include exec so signals (like ctrl+c) are handled correctly
-    init: true
+    init: true # Ensure proper signal handling
     entrypoint: /usr/src/app/tilemaker
 
   server:

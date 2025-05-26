@@ -1,0 +1,6 @@
+minzoom: 0
+maxzoom: 9
+args: --no-line-simplification
+sources:
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_geographic_lines.shp

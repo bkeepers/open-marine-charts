@@ -1,0 +1,6 @@
+args: --convert-polygons-to-label-points
+sources:
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_geography_regions_polys.shp
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_geography_regions_points.shp

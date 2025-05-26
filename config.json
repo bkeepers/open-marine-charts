@@ -2,7 +2,6 @@
   "options": {
     "paths": {
       "fonts": "data/fonts",
-      "icons": "styles/icons",
       "styles": "styles",
       "mbtiles": "build"
     }

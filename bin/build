@@ -3,47 +3,28 @@
 set -o errexit
 set -o pipefail
 set -o nounset
-set -x
+
+# Set VERBOSE to enable verbose output
+if [[ -n "${VERBOSE-}" ]]; then
+  set -o xtrace
+  set -o verbose
+fi
 
 cd "$(dirname "$0")/.."
 
-REGION=${1:-}
+for layer in layers/*.yaml; do
+  bin/build-layer "$layer"
+done
 
-# FIXME: get this from the region
-BBOX=-180,-85,180,85
-# BBOX=-90,15,-67,85
+bin/tile-join \
+  --force \
+  --overzoom \
+  --no-tile-size-limit \
+  --name="OpenMarineCharts World" \
+  -o build/world.mbtiles.tmp \
+  build/layer/*.mbtiles
 
-if [ -z "$REGION" ]; then
-  echo "Usage: $0 <region>"
-  exit 1
-fi
+  # --description
+  # --attribution
 
-mkdir -p build
-mkdir -p cache/build
-
-if [ -d "configs/$REGION" ]; then
-  CONFIG=$REGION
-  OUTPUT=${2:-$REGION.mbtiles}
-  INPUT=""
-else
-  # remove slash from region name
-  REGION_NAME=${REGION//\//_}
-  CONFIG=region
-  INPUT="--input ${REGION_NAME}-latest.osm.pbf"
-  OUTPUT=${2:-$REGION_NAME.mbtiles}
-
-  if ! [ -f data/$REGION_NAME-latest.osm.pbf ]; then
-    bin/regions download $REGION
-  fi
-fi
-
-echo "Building $OUTPUT"
-docker compose run --rm -it build \
-  --process configs/$CONFIG/process.lua \
-  --config  configs/$CONFIG/config.json \
-  --store cache/build \
-  $INPUT --output build/.tmp.$OUTPUT \
-  --bbox $BBOX
-
-# Move the output file to the correct name
-mv build/.tmp.$OUTPUT build/$OUTPUT
+mv build/world.mbtiles{.tmp,}

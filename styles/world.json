@@ -12,7 +12,7 @@
   "sources": {
     "openmarinecharts-world": {
       "type": "vector",
-      "url": "http://localhost:8080/data/openmarinecharts.json"
+      "url": "mbtiles://world.mbtiles"
     }
   },
   "glyphs": "{fontstack}/{range}.pbf",
@@ -72,6 +72,11 @@
       "layout": {
         "visibility": "visible"
       },
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
       "paint": {
         "fill-color": "hsl(210, 67%, 82%)"
       }
@@ -155,6 +160,43 @@
             ]
           ]
         }
+      }
+    },
+    {
+      "id": "water-bathymetry-label",
+      "type": "symbol",
+      "metadata": {},
+      "source": "openmarinecharts-world",
+      "source-layer": "water",
+      "filter": [
+        "has",
+        "depth"
+      ],
+      "minzoom": 6,
+      "layout": {
+        "symbol-placement": "line-center",
+        "text-field": "{depth} m",
+        "text-font": [
+          "Noto Sans Bold"
+        ],
+        "text-size": {
+          "base": 10,
+          "stops": [
+            [
+              0,
+              10
+            ],
+            [
+              10,
+              16
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "hsl(210, 50%, 65%)",
+        "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+        "text-halo-width": 1.5
       }
     },
     {
@@ -360,16 +402,30 @@
       "source": "openmarinecharts-world",
       "source-layer": "place",
       "filter": [
-        ">=",
+        "all",
         [
-          "zoom"
+          ">=",
+          [
+            "zoom"
+          ],
+          [
+            "get",
+            "min_label"
+          ]
         ],
         [
-          "get",
-          "min_label"
+          "<",
+          [
+            "zoom"
+          ],
+          [
+            "get",
+            "max_label"
+          ]
         ]
       ],
       "layout": {
+        "symbol-placement": "point",
         "text-field": "{name_en}",
         "text-font": [
           "Noto Sans Bold"
@@ -396,6 +452,63 @@
         "text-color": "#633",
         "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "geographic-line",
+      "type": "line",
+      "metadata": {},
+      "source": "openmarinecharts-world",
+      "source-layer": "geography",
+      "layout": {
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "hsla(0 0% 0% / 0.25)",
+        "line-width": 1,
+        "line-dasharray": [
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "id": "geographic-line-label",
+      "type": "symbol",
+      "metadata": {},
+      "source": "openmarinecharts-world",
+      "source-layer": "geography",
+      "minzoom": 2,
+      "layout": {
+        "symbol-placement": "line",
+        "symbol-spacing": 750,
+        "text-field": "{name}",
+        "text-font": [
+          "Noto Sans"
+        ],
+        "text-letter-spacing": 0.1,
+        "text-offset": [
+          0,
+          1
+        ],
+        "text-size": {
+          "base": 12,
+          "stops": [
+            [
+              0,
+              12
+            ],
+            [
+              10,
+              16
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "hsla(0, 0%, 25%, 0.7)",
+        "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+        "text-halo-width": 1.5
       }
     }
   ],

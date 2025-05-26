@@ -1,0 +1,18 @@
+args: --convert-polygons-to-label-points
+sources:
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_geography_marine_polys.shp
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_lakes_australia.shp
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_lakes_europe.shp
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_lakes_historic.shp
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_lakes_north_america.shp
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_lakes_pluvial.shp
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_lakes.shp
+  - url: https://naciscdn.org/naturalearth/10m/physical/10m_physical.zip
+    source: ne_10m_playas.shp
