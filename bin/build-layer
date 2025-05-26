@@ -54,9 +54,13 @@ for source in $(yq eval -o=j "$layer" | jq -cr '.sources[]'); do
       echo "Converting $file to $geojsonfile"
       bin/ogr2ogr -f GeoJSON "$geojsonfile" "$file"
 
-      echo "Normalizing $geojsonfile"
-      cat $geojsonfile | bin/normalize-ne > "$geojsonfile.tmp"
-      mv "$geojsonfile.tmp" "$geojsonfile"
+      # Normalize natural earth data
+      # TODO: move this elsewhere in the build process?
+      if [[ "$geojsonfile" == *ne_10m* ]]; then
+        echo "Normalizing $geojsonfile"
+        cat $geojsonfile | bin/normalize-ne > "$geojsonfile.tmp"
+        mv "$geojsonfile.tmp" "$geojsonfile"
+      fi
     fi
 
     sources+=("$geojsonfile")
