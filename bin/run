@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Check if both stdin and stdout are a TTY
+if [ -t 0 ] && [ -t 1 ]; then
+  TTY_FLAGS="-it"
+else
+  TTY_FLAGS=""
+fi
+
+docker compose run --rm --remove-orphans $TTY_FLAGS "$@"

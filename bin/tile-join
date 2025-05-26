@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker compose run --rm -it --remove-orphans tippecanoe tile-join "$@"
+bin/run tippecanoe tile-join "$@"
