@@ -1,0 +1,16 @@
+name: Container Registry Cleanup
+
+permissions:
+  contents: read
+  packages: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * MON"
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dataaxiom/ghcr-cleanup-action@v1
