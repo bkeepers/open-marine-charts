@@ -1,3 +1,12 @@
 #!/usr/bin/env bash
 
-bin/run tippecanoe tippecanoe "$@"
+set -o errexit
+
+# If stdout is not a TTY, throttle progress updates
+if [ -t 1 ]; then
+  PROGRESS_OPTION=""
+else
+  PROGRESS_OPTION="--progress-interval=10"
+fi
+
+bin/run tippecanoe tippecanoe $PROGRESS_OPTION "$@"

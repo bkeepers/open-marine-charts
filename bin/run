@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -o errexit
+
 # Check if both stdin and stdout are a TTY
 if [ -t 0 ] && [ -t 1 ]; then
   TTY_FLAGS="-it"
