@@ -5,6 +5,8 @@
 # - Set tippecanoe minzoom based on min_zoom or scalerank.
 # - Convert all property keys to lowercase.
 
+set -o errexit
+
 jq '
   . | .features |= map(
       del(..|nulls) |
