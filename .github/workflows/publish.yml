@@ -59,6 +59,9 @@ jobs:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v4
 
+      - name: Download Fonts
+        run: bin/download-fonts
+
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:

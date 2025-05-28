@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+cd "$(dirname "$0")/.."
+mkdir -p data
+
+if ! [ -f data/noto-sans.zip ]; then
+  echo "Downloading fonts"
+  curl -sSfL -C - -o data/noto-sans.zip https://github.com/openmaptiles/fonts/releases/download/v2.0/noto-sans.zip
+fi
+
+if ! [ -d styles/fonts ]; then
+  echo "Extracting fonts"
+  mkdir -p styles/fonts
+  unzip -o data/noto-sans.zip -d styles/fonts
+fi
