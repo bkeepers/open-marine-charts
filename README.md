@@ -4,12 +4,22 @@ This is an attempt to create modern, beautiful, constantly updated, and eventual
 
 ## Current Status & Goals
 
-1. 🟡 **Small scale** 🌎 basemap of the world
-  1. 🟡 Tooling and automated workflows for the creation of vector tiles
-  2. 🟡 Initial basemap of the world at scale 9
-  3. ⚪️ Infrastructure for serving and distributing (releases, website, tile server, Signal K plugin, etc)
-2. ⚪️ **Medium scale** 🗺️ regional charts incorporating regional hydrographic/bathymetry data, OpenSeaMap data, and any relevant OpenStreetMap data.
-3. ⚪️ **Large scale** 🗾 local charts using local hydrographic/bathymetry data, crowd-sourced bathymetry data, and a vessel's own sounder data
+### 🟡 Phase 1: **Small scale** basemap of the world 🌎
+1. 🟡 Tooling and automated workflows for the creation of vector tiles
+2. 🟡 Initial basemap of the world at scale 9
+3. ⚪️ Infrastructure for serving and distributing (releases, website, tile server, Signal K plugin, etc)
+
+### ⚪️ Phase 2: **Medium scale** regional charts 🗺️
+
+1. ⚪️ Incorporate Regional hydrographic/bathymetry data
+2. ⚪️ Incorporate [OpenSeaMap](https://openseamap.org/) data
+3. ⚪️ Incorporate relevant [OpenStreetMap](https://www.openstreetmap.org) data.
+
+### ⚪️ Phase 3: **Large scale** local charts 🗾
+
+1.  ⚪️ Tools to record and overlay vessel's own sounder data
+2.  ⚪️ Incorporate local hydrographic/bathymetry data
+3.  ⚪️ Incorporate crowd-sourced bathymetry data
 
 ✅ Done - 🟡 In progress - ⚪️ Not started
 
